@@ -1,0 +1,156 @@
+@font-face {
+  font-family: "FontSpot";
+  src: url("many.ttf");
+}
+
+p {
+  font-family: "FontSpot";
+}
+
+.logospotify img {
+  width: 70%;
+  height: auto;
+}
+
+.logospotify {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerspot {
+  width: 90%;
+  height: 90vh; /* Altezza al 90% dell'altezza dello schermo */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10rem;
+  margin: auto; /* Imposta i margini su "auto" per centrare il contenitore */
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.scritta1 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Due colonne di larghezza uguale */
+  grid-template-rows: repeat(1, 1fr);
+  font-size: 80px;
+  align-items: center;
+}
+
+.scritta2 {
+  font-size: 60px;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.containerspot .logospotify img {
+  animation: pulsate 30s infinite;
+}
+
+.scritta1 p,
+.scritta2 p {
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.scritta1 p:hover,
+.scritta2 p:hover {
+  color: transparent;
+  background-image: linear-gradient(to right, #880000, #0a0095, #000000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: color 0.3s ease, transform 0.3s ease;
+  transform: translateX(
+    30px
+  ); /* Puoi regolare la quantità di spostamento desiderata */
+}
+
+.button-container button {
+  width: 100%;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 10px;
+  height: 100%;
+  border: transparent;
+  padding: 10px;
+  color: white;
+  background: linear-gradient(to right, #880000, #0a0095, #000000);
+}
+
+.offerta {
+  display: flex;
+  justify-content: space-between;
+}
+
+.prezzi img {
+  width: 250px;
+  height: auto;
+}
+
+.sconti img {
+  width: 500px;
+  height: auto;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.containerspot .scritta1 .offerta .prezzi img {
+  animation: pulsate 5s infinite;
+}
+
+@media (max-width: 1980px) {
+  .containerspot {
+    gap: 5rem;
+  }
+
+  .scritta1 {
+    font-size: 60px;
+  }
+
+  .scritta2 {
+    font-size: 40px;
+    align-self: flex-end;
+  }
+
+  .logospotify img {
+    width: 60%;
+    height: auto;
+  }
+
+  .button-container button {
+    font-size: 25px;
+  }
+
+  .prezzi img {
+    width: 200px;
+    height: auto;
+  }
+
+  .sconti img {
+    width: 350px;
+    height: auto;
+  }
+}
